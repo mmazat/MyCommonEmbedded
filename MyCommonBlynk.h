@@ -5,9 +5,11 @@
 
 WidgetRTC widget_rtc;
 
-BLYNK_CONNECTED() {
-  // Synchronize time on connection
+BLYNK_CONNECTED() { 
+  // Synchronize time on connection  
   widget_rtc.begin();
+  setSyncInterval(60);
+  delay(1000); //give rtc some time to syncup
 }
 
 // Digital clock display of the time
